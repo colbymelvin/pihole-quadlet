@@ -1,0 +1,21 @@
+[Unit]
+Description=Pi-hole container
+
+[Container]
+AutoUpdate=registry
+ContainerName=pihole
+Environment=TZ=America/New_York
+Image=pihole/pihole:latest
+Network=pihole.network
+PublishPort=53:53/tcp
+PublishPort=53:53/udp
+PublishPort=80:80/tcp
+PublishPort=443:443/tcp
+Volume=%h/etc-pihole:/etc/pihole
+
+[Service]
+Restart=always
+
+[Install]
+# Start automtically by default on boot
+WantedBy=default.target
