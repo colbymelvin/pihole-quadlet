@@ -4,7 +4,7 @@ Description=Pi-hole container
 [Container]
 AutoUpdate=registry
 ContainerName=pihole
-Environment=FTLCONF_dns_upstreams="1.1.1.1;8.8.8.8"
+Environment="FTLCONF_dns_upstreams=1.1.1.1;8.8.8.8"
 Environment=TZ=America/New_York
 Image=docker.io/pihole/pihole
 Network=pihole.network
