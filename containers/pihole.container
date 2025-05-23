@@ -5,7 +5,7 @@ Description=Pi-hole container
 AutoUpdate=registry
 ContainerName=pihole
 Environment=TZ=America/New_York
-Image=pihole/pihole:latest
+Image=docker.io/pihole/pihole
 Network=pihole.network
 PublishPort=53:53/tcp
 PublishPort=53:53/udp
