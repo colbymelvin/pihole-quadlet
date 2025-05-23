@@ -1,0 +1,22 @@
+[Unit]
+Description=Pi-hole container
+
+[Container]
+AutoUpdate=registry
+ContainerName=pihole
+Environment=FTLCONF_dns_upstreams=1.1.1.1
+Environment=TZ=America/New_York
+Image=docker.io/pihole/pihole
+Network=pihole.network
+PublishPort=53:53/tcp
+PublishPort=53:53/udp
+PublishPort=80:80/tcp
+PublishPort=443:443/tcp
+Volume=pihole.volume:/pihole
+
+[Service]
+Restart=always
+
+[Install]
+# Start automtically by default on boot
+WantedBy=default.target
